@@ -6,6 +6,10 @@
 
 ---
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hicccc77/hicccc77/output/github-snake.svg" alt="Contribution Snake" />
+</p>
+
 ### 👨‍💻 关于我
 
 - 🔭 目前正在开发 **[WeFlow]**
@@ -31,12 +35,8 @@
 ### 📊 GitHub 数据统计
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=hicccc77&show_icons=true&theme=tokyonight" alt="hicccc77's GitHub Stats" width="48%"/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=hicccc77&theme=tokyonight" alt="hicccc77's Streak" width="48%"/>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hicccc77&layout=compact&theme=tokyonight" alt="Top Languages" width="50%"/>
-</p>
 
 ---
