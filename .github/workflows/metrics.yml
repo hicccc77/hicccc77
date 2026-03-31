@@ -1,4 +1,4 @@
-name: Advanced Metrics
+name: High-End Metrics
 on:
   schedule: [{cron: "0 */12 * * *"}]
   workflow_dispatch:
@@ -15,28 +15,19 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
           
-          # --- 高级感配置开始 ---
-          design: radiance # 使用更具现代感的亮光设计
-          config_order: base.header, isocalendar, languages, habits # 调整模块顺序
+          theme: tokyonight 
+          config_padding: 0, 8 + 11%
           
-          # 1. 3D 贡献日历（非常高级）
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
           
-          # 2. 详细的语言统计（带百分比和环形图）
           plugin_languages: yes
           plugin_languages_ignored: html, css
-          plugin_languages_details: bytes-size, percentage
+          plugin_languages_details: percentage
           plugin_languages_sections: most-used
-          plugin_languages_indepth: yes
           
-          # 3. 编码习惯（极客范：显示你最活跃的时间段）
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_charts: yes
-          plugin_habits_trim: yes
+          plugin_achievements: yes
+          plugin_achievements_threshold: B
+          plugin_achievements_display: compact
           
-          # 4. 星标成就（展示你获得过的荣誉）
-          plugin_stars: yes
-          plugin_stars_limit: 4
-          # --- 配置结束 ---
+          plugin_lines: yes
