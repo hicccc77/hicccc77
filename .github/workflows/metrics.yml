@@ -1,10 +1,10 @@
-name: Ultimate Profile Dashboard
+name: Professional Profile Actions
 on:
   schedule: [{cron: "0 */12 * * *"}]
   workflow_dispatch:
   push: {branches: ["master", "main"]}
 jobs:
-  github-metrics:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: Platane/snk@v3
@@ -13,7 +13,7 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-            
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -21,12 +21,11 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
-          config_theme: tokyonight
+          config_output: dist/github-metrics.svg # 直接输出到 dist 目录
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
           plugin_languages: yes
           plugin_languages_details: percentage
-          filename: github-metrics.svg
 
       - uses: crazy-max/ghaction-github-pages@v3
         with:
@@ -34,9 +33,3 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
-
-      - name: Save Metrics to Main
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          mv github-metrics.svg dist/ || true
