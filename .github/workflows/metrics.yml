@@ -1,4 +1,4 @@
-name: High-End Metrics
+name: Professional Metrics
 on:
   schedule: [{cron: "0 */12 * * *"}]
   workflow_dispatch:
@@ -15,8 +15,9 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
           
-          theme: tokyonight 
+          config_theme: tokyonight
           config_padding: 0, 8 + 11%
+          config_twemoji: yes
           
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
@@ -25,6 +26,7 @@ jobs:
           plugin_languages_ignored: html, css
           plugin_languages_details: percentage
           plugin_languages_sections: most-used
+          plugin_languages_indepth: yes
           
           plugin_achievements: yes
           plugin_achievements_threshold: B
