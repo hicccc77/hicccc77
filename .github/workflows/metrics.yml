@@ -34,12 +34,16 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
-          config_output: dist/github-metrics.svg
           output_action: none
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
           plugin_languages: yes
           plugin_languages_details: percentage
+
+      - name: Copy metrics to dist
+        run: |
+          mkdir -p dist
+          cp /metrics_renders/github-metrics.svg dist/github-metrics.svg
 
       - name: Deploy to output branch
         uses: peaceiris/actions-gh-pages@v4
