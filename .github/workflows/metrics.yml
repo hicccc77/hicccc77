@@ -15,10 +15,10 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
           
-          config_theme: tokyonight
+          config_theme: tokyonight 
           config_padding: 0, 8 + 11%
           config_twemoji: yes
-          
+
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
           
@@ -28,8 +28,7 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_indepth: yes
           
-          plugin_achievements: yes
-          plugin_achievements_threshold: B
-          plugin_achievements_display: compact
+          plugin_followup: yes
+          plugin_followup_sections: user
           
           plugin_lines: yes
